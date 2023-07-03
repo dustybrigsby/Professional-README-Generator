@@ -8,38 +8,38 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: "What is the title of your project?"
+        message: 'What is the title of your project?'
     },
     {
         type: 'input',
         name: 'description',
-        message: "Provide a description of your project:"
+        message: 'Provide a description of your project:'
     },
     {
         type: 'input',
         name: 'installation',
-        message: "What are the installation instructions?"
+        message: 'What are the installation instructions?'
     },
     {
         type: 'input',
         name: 'usage',
-        message: "How does one use your project?"
+        message: 'How does one use your project?'
     },
     {
         type: 'list',
         name: 'license',
-        message: "What license is used?",
-        choices: 
+        message: 'What license is used?',
+        choices: ['None','Apache License 2.0','GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal','Eclipse Public License 2.0','GNU Affero General Public License v2.0','GNU General Public License v2.0','GNU Lesser General Public License v2.1','Mozilla Public License 2.0','The Unlicense']
     },
     {
         type: 'input',
         name: 'contributors',
-        message: "Are there any other contributors?"
+        message: 'Are there any other contributors?'
     },
     {
         type: 'input',
         name: 'test',
-        message: "What are the test instructions?"
+        message: 'What are the test instructions?'
     }
 ];
 
