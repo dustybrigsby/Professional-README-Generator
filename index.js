@@ -7,6 +7,11 @@ const generateMarkdown = require('./generateMarkdown');
 const questions = [
     {
         type: 'input',
+        name: 'user',
+        message: 'What is the name you would like to be referred to as?'
+    },
+    {
+        type: 'input',
         name: 'title',
         message: 'What is the title of your project?'
     },
@@ -48,7 +53,22 @@ async function getInput() {
     try {
         const answers = await inquirer.prompt(questions);
         console.log('answers:', answers);
-        // Handle answers
+
+        const data = {
+            user: answers.user,
+            title: answers.title,
+            description: answers.description,
+            installation: answers.installation,
+            usage: answers.usage,
+            license: { name: answers.license, badge: '', link: '', blurb: '' },
+            contributors: answers.contributors,
+            test: answers.test
+        };
+
+        data.license.badge = generateMarkdown.renderLicenseBadge(data.license.name);
+        data.license.link = generateMarkdown.renderLicenseLink(data.license.name);
+        data.license.blurb = generateMarkdown.renderLicenseSection(data.user, data.license.name);
+
 
     } catch (error) {
         console.error('Error:', error);
