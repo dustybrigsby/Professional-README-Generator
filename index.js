@@ -69,14 +69,15 @@ async function getInput() {
         data.license.link = generateMarkdown.renderLicenseLink(data.license.name);
         data.license.blurb = generateMarkdown.renderLicenseSection(data.user, data.license.name);
 
+        const markdownString = generateMarkdown.generateMarkdown(data);
+
+        writeToFile(markdownString);
 
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
-
-// TODO: Create a function to write README file
 function writeToFile(data) {
     fs.writeFile('README.md', data, (err) => {
         if (err) {
@@ -87,10 +88,8 @@ function writeToFile(data) {
     });
 }
 
-// TODO: Create a function to initialize app
 function init() {
     getInput();
 }
 
-// Function call to initialize app
 init();

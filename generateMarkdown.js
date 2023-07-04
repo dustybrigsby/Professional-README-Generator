@@ -547,19 +547,26 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.`;
 
 function generateMarkdown(data) {
     return `# ${ data.title }
+    [![${ data.license.name }](${ data.license.badge })](${ data.license.link })
     
     ## Description
+    ${ data.description }
 
     ## Installation
+    ${ data.installation }
 
     ## Usage
+    ${ data.usage }
 
     ## License
+    [${ data.license.name }](${ data.license.link })
+    ${ data.license.blurb }
 
     ## Contributors
+    ${ data.contributors }
 
     ## Test
-    `;
+    ${ data.test }`;
 }
 
 module.exports = generateMarkdown;
