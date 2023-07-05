@@ -63,11 +63,7 @@ async function getInput() {
             test: answers.test
         };
 
-        data.license.badge = generateMarkdown.renderLicenseBadge(data.license.name);
-        data.license.link = generateMarkdown.renderLicenseLink(data.license.name);
-        data.license.blurb = generateMarkdown.renderLicenseSection(data.user, data.license.name);
-
-        const markdownString = generateMarkdown.generateMarkdown(data);
+        const markdownString = generateMarkdown(data);
 
         writeToFile(markdownString);
 
@@ -77,11 +73,21 @@ async function getInput() {
 }
 
 function writeToFile(data) {
-    fs.writeFile('README.md', data, (err) => {
+
+    fs.mkdir('generatedReadme', { recursive: true }, (err) => {
         if (err) {
-            console.log('Error while writing file:', err);
-        } else {
-            console.log('README.md successfully generated!');
+            console.error('Error while making directory:', err);
+        }
+        else {
+            console.log('generatedReadme directory successfully generated!');
+
+            fs.writeFile('generatedReadme/README.md', data, (err) => {
+                if (err) {
+                    console.log('Error while writing file:', err);
+                } else {
+                    console.log('README.md successfully generated!');
+                }
+            });
         }
     });
 }

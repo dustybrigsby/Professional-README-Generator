@@ -546,27 +546,31 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.`;
 }
 
 function generateMarkdown(data) {
+    data.license.badge = renderLicenseBadge(data.license.name);
+    data.license.link = renderLicenseLink(data.license.name);
+    data.license.blurb = renderLicenseSection(data.user, data.license.name);
+
     return `# ${ data.title }
-    [![${ data.license.name }](${ data.license.badge })](${ data.license.link })
-    
-    ## Description
-    ${ data.description }
+[![${ data.license.name }](${ data.license.badge })](${ data.license.link })
 
-    ## Installation
-    ${ data.installation }
+## Description
+${ data.description }
 
-    ## Usage
-    ${ data.usage }
+## Installation
+${ data.installation }
 
-    ## License
-    [${ data.license.name }](${ data.license.link })
-    ${ data.license.blurb }
+## Usage
+${ data.usage }
 
-    ## Contributors
-    ${ data.contributors }
+## License
+[${ data.license.name }](${ data.license.link })
+${ data.license.blurb }
 
-    ## Test
-    ${ data.test }`;
+## Contributors
+${ data.contributors }
+
+## Test
+${ data.test }`;
 }
 
 module.exports = generateMarkdown;
