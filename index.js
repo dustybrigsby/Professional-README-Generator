@@ -10,6 +10,16 @@ const questions = [
     },
     {
         type: 'input',
+        name: 'github',
+        message: 'What is your GitHub username?'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?'
+    },
+    {
+        type: 'input',
         name: 'title',
         message: 'What is the title of your project?'
     },
@@ -54,6 +64,8 @@ async function getInput() {
 
         const data = {
             user: answers.user,
+            github: answers.github,
+            email: answers.email,
             title: answers.title,
             description: answers.description,
             installation: answers.installation,

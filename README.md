@@ -18,11 +18,11 @@ A README.md generator to quickly and easily build a professional README file.
 
 ## Credits
 
-Extensively used the references and tutorials from:
+Used the references and tutorials from:
 
 [lukas-h/license-badges.md](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba#file-license-badges-md) for the license badges they created with Shields.io.
 
-Referenced multiple activities from 09-NodeJS class lessons and files.
+Multiple activities from 09-NodeJS class lessons and files.
 
 ## License
 
