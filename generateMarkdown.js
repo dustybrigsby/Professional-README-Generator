@@ -590,9 +590,12 @@ ${ data.test }
 <a name="questions"></a>
 ## Questions?
 Answers may be found in my GitHub repository:
-${ data.github }
+
+[${ data.title } GitHub Repository](${ data.github })
+
 If not found there, you can email me at:
-${ data.email }`;
+
+[${ data.email }](mailto:${ data.email })`;
 }
 
 module.exports = generateMarkdown;
