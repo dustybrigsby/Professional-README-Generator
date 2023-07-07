@@ -591,7 +591,7 @@ ${ data.test }
 ## Questions?
 Answers may be found in my GitHub repository:
 
-[${ data.title } GitHub Repository](${ data.github })
+[${ data.title } GitHub Repository](https://github.com/${ data.github }/${ data.title })
 
 If not found there, you can email me at:
 
